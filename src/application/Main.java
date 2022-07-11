@@ -14,8 +14,8 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
 			ScrollPane scrollPane = loader.load();
-			scrollPane.setFitToHeight(true);
-			scrollPane.setFitToWidth(true);
+			scrollPane.setFitToHeight(true); //Pane fit to height
+			scrollPane.setFitToWidth(true); //Pane fit to width
 			
 			Scene mainScene = new Scene(scrollPane);
 			primaryStage.setScene(mainScene);
