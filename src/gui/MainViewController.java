@@ -51,9 +51,10 @@ public class MainViewController implements Initializable {
 	
 	private void loadView(String absoluteName) {
 		try {
+			//Go to another windows
 			FXMLLoader loaderAbout = new FXMLLoader(getClass().getResource(absoluteName));
 			
-			VBox aboutVBox = loaderAbout.load();
+			VBox newVBox = loaderAbout.load();
 			
 			Scene mainScene = Main.getMainScene();
 			
@@ -62,7 +63,7 @@ public class MainViewController implements Initializable {
 			Node mainMenu = mainVBox.getChildren().get(0);
 			mainVBox.getChildren().clear();	
 			mainVBox.getChildren().add(mainMenu);
-			mainVBox.getChildren().addAll(aboutVBox.getChildren());
+			mainVBox.getChildren().addAll(newVBox.getChildren());
 			
 		}catch(IOException e) {
 			Alerts.showAlert("Error", null, e.getMessage(), AlertType.ERROR);
