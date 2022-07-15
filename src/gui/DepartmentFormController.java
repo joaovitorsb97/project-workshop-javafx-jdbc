@@ -50,7 +50,6 @@ public class DepartmentFormController implements Initializable {
 		try {
 			department = getFormData();
 			service.saveOrUpdate(department);
-			Alerts.showAlert("Success!", null, "Department inserted with success!", AlertType.CONFIRMATION);
 			notifyDataChangeListener();
 			Utils.currentStage(event).close();
 		} catch (DbException e) {
