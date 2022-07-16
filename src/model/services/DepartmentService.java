@@ -28,4 +28,8 @@ public class DepartmentService {
 			Alerts.showAlert("Update Success!", null, "Department updated with success!", AlertType.CONFIRMATION);
 		}
 	}
+	
+	public void remove(Department department) {
+		dao.deleteById(department.getId());
+	}
 }
