@@ -49,10 +49,10 @@ public class DepartmentViewController implements Initializable, DataChangeListen
 	private TableColumn<Department, Department> tableColumnEDIT;
 
 	@FXML
-	private Button btnNew;
-
-	@FXML
 	private TableColumn<Department, Department> tableColumnREMOVE;
+	
+	@FXML
+	private Button btnNew;
 
 	private ObservableList<Department> obsList;
 
@@ -150,14 +150,14 @@ public class DepartmentViewController implements Initializable, DataChangeListen
 			private final Button button = new Button("remove");
 
 			@Override
-			protected void updateItem(Department obj, boolean empty) {
-				super.updateItem(obj, empty);
-				if (obj == null) {
+			protected void updateItem(Department department, boolean empty) {
+				super.updateItem(department, empty);
+				if (department == null) {
 					setGraphic(null);
 					return;
 				}
 				setGraphic(button);
-				button.setOnAction(event -> removeEntity(obj));
+				button.setOnAction(event -> removeEntity(department));
 			}
 		});
 	}
