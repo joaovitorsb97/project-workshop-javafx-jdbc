@@ -189,6 +189,7 @@ public class SellerViewController implements Initializable, DataChangeListener {
 			}
 			try {
 				service.remove(seller);
+				Alerts.showAlert("Remove Success!", null, "Seller removed with success!", AlertType.CONFIRMATION);
 				updateTableView();
 			}catch(DbException e) {
 				Alerts.showAlert("Error to remove seller", null, e.getMessage(), AlertType.ERROR);
