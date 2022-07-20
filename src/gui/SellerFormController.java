@@ -117,14 +117,16 @@ public class SellerFormController implements Initializable {
 		}
 		seller.setEmail(txtEmail.getText());
 		
-		Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
-		
-		if(instant == null) {
+		if(dpBirthDate.getValue() == null) {
 			exception.addErrors("birthDate", "Field can't be empty");
 		}
-		seller.setBirthDate(Date.from(instant));
+		else {
+			Instant instant = Instant.from(dpBirthDate.getValue().atStartOfDay(ZoneId.systemDefault()));
+			seller.setBirthDate(Date.from(instant));
+		}
 		
-		if(txtBaseSalary.getText() == null) {
+		
+		if(txtBaseSalary.getText() == null || txtBaseSalary.getText().trim().equals("")) {
 			exception.addErrors("baseSalary", "Field can't be empty");
 		}
 		
